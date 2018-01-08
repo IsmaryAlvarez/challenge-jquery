@@ -11,15 +11,16 @@ $(document).ready( function(){
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
 */
+var high= [];
+var recetas= $();
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
 
-	var high= [];
+
 	for (var i=0; i < recipesArray.length; i++){
 		if (recipesArray[i].highlighted ===true){
 			high++;
 			renderRecipe(recipesArray[i]);
-			console.log(renderRecipe);
 		}
 	}
 }
@@ -31,9 +32,9 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	console.log('Voy a pintar la receta: ', recipe);
-}
+	$(".list-recipes").append('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">' + recipe.title + ' </span> <span class="metadata-recipe"> <span class="author-recipe"> ' + recipe.source.name + '</span> <span class="bookmarks-recipe"> <span class="icon-bookmark"></span> </span> </span></span> <img src="img/recipes/320x350/fall-mexican-rice.jpg" /> </a>');
 
+}
 
 
 /*
