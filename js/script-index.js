@@ -13,6 +13,15 @@ $(document).ready( function(){
 */
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+
+	var high= [];
+	for (var i=0; i < recipesArray.length; i++){
+		if (recipesArray[i].highlighted ===true){
+			high++;
+			renderRecipe(recipesArray[i]);
+			console.log(renderRecipe);
+		}
+	}
 }
 
 /*
